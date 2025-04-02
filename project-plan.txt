@@ -1,0 +1,54 @@
+PROJECT PLAN
+
+Blog: Bengali Book Haven
+
+Project Title:
+Bengali Book Haven
+A sanctuary for enthusiasts of Bengali literature to explore and discuss novels.
+
+Project Description:
+Bengali Book Haven is a dynamic, multi-page blog website dedicated to Bengali literature. The blog allows users to create, read, edit, and delete posts about Bengali novels and literary experiences. Users can write reviews, share thoughts, and discover new books, all in one digital space.
+
+Purpose of the Blog:
+
+The purpose of this blog is to:
+
+- Give Bengali literature lovers a place to express their ideas and share reflections, reviews, and reading experiences.
+- Help readers discover timeless classics and hidden gems from Bengali novels and authors.
+- Encourage discussions around Bengali storytelling, cultural heritage, and literary themes.
+- Foster a love for reading Bengali books among students, young adults, and global readers.
+
+Features Covered:
+
+- Create: A form to write and save new blog posts.
+- Read: A homepage that lists all posts from localStorage.
+- Update: Ability to edit existing blog posts.
+- Delete: Remove posts from localStorage.
+- Responsive design: Works well on desktop and mobile.
+
+Pages to Be Developed:
+
+- index.html – Lists all blog posts and has a link to create new ones.
+- new-post.html – A form to submit new blog posts with validation.
+- post.html – View, edit, or delete a specific post based on its ID.
+
+Technologies Used:
+
+- HTML
+- CSS
+- Bootstrap (for layout and responsive design)
+- JavaScript
+- Local Storage
+- Git & GitHub
+
+Git Workflow Plan:
+
+We will follow a structured Git branching model:
+
+- feature/homepage
+- feature/new-post
+- feature/view-edit-post
+- feature/delete-post
+- feature/styling for responsive design (Optional)
+
+Each feature will be developed on a separate branch with multiple commits, pushed to GitHub, and merged into the main branch through pull requests.
