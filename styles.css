@@ -1,0 +1,13 @@
+body {
+    background-color: #fdf6f0;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    color: #5c4033;
+  }
+  
+  #post-list .card {
+    margin-bottom: 20px;
+  }
+  
