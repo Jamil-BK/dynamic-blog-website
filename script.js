@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const postList = document.getElementById('post-list');
   const template = document.querySelector('.post-card-template');
 
-  // Seed posts if there is no post exist
+  // Seed posts if none exist
   if (!localStorage.getItem('posts')) {
     const samplePosts = [
       {
@@ -61,12 +61,12 @@ document.addEventListener('DOMContentLoaded', () => {
     shortText.textContent = post.content.substring(0, 200) + '...';
     fullText.textContent = post.content;
 
-    // Read More ----toggle
+    // Read More toggle
     readMoreBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      const isExpanded = fullText.classList.contains('d-none') === false;
+      const isExpanded = !fullText.classList.contains('d-none');
 
-      // Collapse all open posts
+      // Collapse all posts first
       document.querySelectorAll('.full-content').forEach(fc => fc.classList.add('d-none'));
       document.querySelectorAll('.short-content').forEach(sc => sc.classList.remove('d-none'));
       document.querySelectorAll('.read-more-btn').forEach(btn => btn.textContent = 'Read More');
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Edit button link
+    // Edit button
     editBtn.addEventListener('click', () => {
       window.location.href = `post.html?id=${index}`;
     });
@@ -91,15 +91,15 @@ document.addEventListener('DOMContentLoaded', () => {
   latest.classList.add('latest-highlight');
   latestContainer.appendChild(latest);
 
-  // All older posts
+  // Other posts
   posts.slice(0, posts.length - 1).forEach((post, index) => {
     const card = createCard(post, index);
     postList.appendChild(card);
   });
 
-  // Collapse open posts if clicks outside Read More
+  // Collapse if clicking outside card
   document.body.addEventListener('click', (e) => {
-    if (!e.target.closest('.read-more-btn')) {
+    if (!e.target.closest('.card')) {
       document.querySelectorAll('.full-content').forEach(fc => fc.classList.add('d-none'));
       document.querySelectorAll('.short-content').forEach(sc => sc.classList.remove('d-none'));
       document.querySelectorAll('.read-more-btn').forEach(btn => btn.textContent = 'Read More');
