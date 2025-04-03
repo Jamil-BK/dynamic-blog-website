@@ -1,13 +1,360 @@
+/* ============ Base Styles ============ */
 body {
-    background-color: #fdf6f0;
-    font-family: Arial, sans-serif;
+  background-color: #fdf6f0;
+  font-family: Arial, sans-serif;
+}
+
+/* Body Background with Bookshelf picture*/
+body {
+  background-image: url('images/bookshelf.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Arial, sans-serif;
+  animation: bodyFadeIn 1.2s ease;
+  position: relative;
+}
+
+/* overlay to ensure text visibility */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(255, 255, 255, 0.73); 
+  z-index: -1;
+}
+
+/* entrance animation */
+@keyframes bodyFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* =============================================== */
+
+h1 {
+  color: #5c4033;
+  font-weight: bold;
+}
+
+.lead {
+  color: #5c4033;
+}
+
+p.text-center {
+  font-style: italic;
+  margin-top: 2rem;
+}
+
+/* ============ Header Video ============ */
+.vid-index-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  max-height: 400px;
+}
+
+.vid-index {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* ============ Navbar ============ */
+.custom-navbar {
+  background-color: #4b0000;
+  padding: 0.75rem 1rem;
+}
+
+.custom-navbar .navbar-brand,
+.custom-navbar .nav-link {
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.custom-navbar .nav-link {
+  margin-right: 1.65rem;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #e953ab !important;
+  font-size: 1.75rem;
+}
+
+/* ============ Buttons ============ */
+.btn-primary {
+  background-color: #9c4221;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #7a341e;
+}
+
+/* read more & edit button styles */
+.read-more-btn,
+.edit-btn {
+  min-width: 100px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.read-more-btn:hover,
+.edit-btn:hover {
+  background-color: #0d6efd;
+  color: white;
+  box-shadow: 0 0 10px rgba(13, 110, 253, 0.4);
+}
+
+/* ============ Post Cards ============ */
+#post-list {
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background-color: #fbe7d6;
+  border: 1px solid #e6c8b5;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  max-width: 500px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card-img-top {
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+  border-bottom: 1px solid #e6c8b5;
+  display: block;
+  margin: 0 auto;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.card-text {
+  text-align: justify;
+  color: #212529;
+}
+
+/* ============ Footer ============ */
+.custom-footer {
+  background-color: #5c0000;
+  font-size: 1.2rem;
+  color: white;
+}
+
+/* ============ post.html ============ */
+#post-container {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#post-container img {
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 20px;
+  border: 1px solid #e6c8b5;
+}
+
+#post-container h2 {
+  color: #5c4033;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+#post-container p {
+  text-align: justify;
+  line-height: 1.6;
+  color: #212529;
+}
+
+form input[type="text"],
+form textarea,
+form input[type="file"] {
+  background-color: rgba(255, 255, 255, 0.9);  /* Soft white */
+  border: 1px solid #c8b7a6;
+  padding: 10px 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+  font-size: 1rem;
+}
+
+form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+
+/* ============ Highlight for Newest Post ============ */
+.latest-highlight {
+  background-color: #e8f0ff;
+  border: 2px solid #007bff;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  animation: fadeSlideBounce 0.8s ease-out;
+}
+
+/* ============Body Animation ============ */
+@keyframes bodyFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ========== Animation ================================= */
+
+@keyframes fadeSlideBounce {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.02);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* =============================== Media Query - Responsive================ */
+/* ==================== Responsive Styling ==================== */
+
+/* Devices up to 678px wide */
+@media (max-width: 678px) {
+  .custom-navbar {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .custom-navbar .navbar-brand {
+    font-size: .8rem;
+    padding: 0.2rem 0;
+  }
+
+  .custom-navbar .nav-link {
+    display: block;
+    margin: 0.1rem 0;
+    font-size: 0.2rem;
+    text-align: center;
+    padding: 0;
+  }
+
+  .vid-index-container {
+    height: 80px;
   }
   
+  .vid-index {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    display: block;
+  }
+  
+
+  .btn-primary {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+
   h1 {
-    color: #5c4033;
+    font-size: 1.2rem;
   }
-  
-  #post-list .card {
-    margin-bottom: 20px;
+
+  .lead {
+    font-size: 0.95rem;
   }
-  
+
+  .card-title {
+    font-size: 1.05rem;
+  }
+
+  .card-text {
+    font-size: 0.92rem;
+  }
+
+  footer.custom-footer {
+    font-size: .9rem;
+    padding: .9rem 0;
+  }
+}
+
+/* Devices up to 576px wide - extra small phones */
+/* ================= */
+@media (max-width: 576px) {
+  .custom-navbar {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+  }
+
+  .custom-navbar .navbar-brand {
+    font-size: 0.9rem;
+  }
+
+  .custom-navbar .nav-link {
+    margin: 0.1rem 0;
+    font-size: 0.7rem;
+    text-align: center;
+    padding: 0;
+  }
+
+  .vid-index-container {
+    max-height: 80px;
+  }
+
+  .vid-index {
+    width: 100%;
+    height: 80px;
+  }
+
+
+  .btn-primary {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.75rem;
+  }
+
+  .container, .card-body {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+  }
+
+  footer.custom-footer {
+    font-size: 0.8rem;
+  }
+}
