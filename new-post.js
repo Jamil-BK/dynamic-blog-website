@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const postId = params.get('id');
     const posts = JSON.parse(localStorage.getItem('posts')) || [];
   
-    // If editing, load existing post into form
+    // If editing, load existing post 
     if (postId !== null && posts[postId]) {
       const post = posts[postId];
       titleInput.value = post.title;
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const newPost = { title, content, image };
   
       if (postId !== null && posts[postId]) {
-        posts[postId] = newPost; // Update existing post
+        posts[postId] = newPost; // Update  post
       } else {
         posts.push(newPost); // Create new post
       }
