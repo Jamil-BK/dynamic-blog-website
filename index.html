@@ -4,27 +4,83 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bengali Book Haven</title>
-  <!-- Bootstrap CSS CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom Styles -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <div class="container py-4">
-    <h1 class="text-center">📚 Bengali Book Haven</h1>
-    <p class="text-center">A sanctuary for enthusiasts of Bengali literature to explore and discuss novels.</p>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark custom-navbar shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">📚 Bengali Book Haven</a>
+      <div class="navbar-collapse d-flex justify-content-end">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="new-post.html">Create Post</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <div class="text-end mb-3">
+  <!-- Header Video -->
+  <div class="vid-index-container">
+    <video class="vid-index" autoplay muted loop playsinline>
+      <source src="images/index.vid.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container py-4">
+    <div class="text-center mb-4">
+      <h1>Bengali Book Haven</h1>
+      <p class="lead">A sanctuary for enthusiasts of Bengali literature to explore and discuss novels.</p>
+    </div>
+
+    <div class="text-center mb-3">
       <a href="new-post.html" class="btn btn-primary">+ Create New Post</a>
     </div>
 
-    <div id="post-list" class="row">
-      <!-- Blog posts will be loaded here with JavaScript -->
+    <!-- New Post Section -->
+    <h3 class="text-center mb-4">🆕 New Post</h3>
+    <div id="latest-post" class="row justify-content-center mb-5"></div>
+
+    <hr />
+    <h4 class="text-center mb-4">📚 All Posts</h4>
+
+    <div id="post-list" class="row justify-content-center">
+
+      <!-- Template Post Card -->
+      <div class="col-md-6 d-flex justify-content-center post-card-template d-none">
+        <div class="card shadow-sm h-100 text-center post-card" style="max-width: 500px;">
+          <img src="" class="card-img-top" alt="Cover Image">
+          <div class="card-body">
+            <h5 class="card-title fw-bold"></h5>
+
+            <p class="card-text short-content"></p>
+            <p class="card-text full-content d-none"></p>
+
+            <div class="d-flex justify-content-center gap-3 mt-3">
+              <button class="btn btn-outline-primary btn-sm read-more-btn">Read More</button>
+              <button class="btn btn-outline-primary btn-sm edit-btn">Edit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <!-- JavaScript file -->
+  <!-- Footer -->
+  <footer class="text-center py-3 custom-footer mt-5 border-top">
+    <p class="mb-0 text-white">© Bengali Book Haven 2025 | All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
